@@ -1,0 +1,91 @@
+
+<div class="corpo">
+
+  <div class="row" style="padding-top: 12px;">
+    <div class="col-md-12" style="text-align: right; font-size: 12px;">
+      <a class="duvidas" href="#" routerLink="/home" >Dúvidas frequentes???</a>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-12" style="text-align: left; ">
+      <h1 class="titulo1">Aluguel de carros - Pesquise, compare e economize</h1>
+      <h5 class="titulo2">Auto Car oferecendo o melhor para você e sua familia</h5>
+    </div>
+  </div>
+
+  <hr>
+
+
+  <form [formGroup]="formHome">
+
+    <div class="row" style="margin-top: 12px; margin-left: 0px; padding-top: 0px;">
+      <div class="col-md-10" style="text-align: left; ">
+        <label class="form-label" style="font-weight: bold;">Relação de Carros</label>
+
+        <br>
+
+        <label class="form-label" style="font-weight: bold;">Id Pessoa</label>
+        <input type="text" formControlName="id">
+
+        <br>
+
+
+        <label class="form-label" style="font-weight: bold;">Data da Retirada</label>
+        <input type="date" class="form-control" placeholder="Data" style="margin-top: -5px">
+
+        <br>
+
+
+          <select class="form-select">
+            <option>Selecione um Carro</option>
+            <option *ngFor="let Veiculo of Veiculos" value="{{Veiculo.id}}">{{Veiculo.marca}} | {{Veiculo.modelo}} | {{Veiculo.combustivel}} | {{Veiculo.ano}}</option>
+          </select>
+
+      </div>
+      <div class="col-md-2" style="text-align: left; padding-top: 32px ">
+        <button class="btn btn-primary">Confirmar Locação</button>
+      </div>
+    </div>
+    <hr>
+
+
+    <div class="row col-12" style="margin-left: 0px; padding-top: 0px;">
+        <div class="col-md-4">
+          <label class="form-label" style="font-weight: bold;">Local de Retirada</label>
+          <select class="form-select" style="margin-top: -5px">
+            <option selected>Selecione um Local</option>
+            <option value="1">Local 1</option>
+            <option value="2">Local 2</option>
+            <option value="3">Local 3</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label class="form-label" style="font-weight: bold;">Data da Retirada</label>
+          <input type="date" class="form-control" placeholder="Data" style="margin-top: -5px">
+        </div>
+        <div class="col-md-2">
+          <label class="form-label" style="font-weight: bold;">Hora da Retirada</label>
+          <input type="time" class="form-control" placeholder="Hora"  style="margin-top: -5px">
+        </div>
+        <div class="col-md-2">
+          <label class="form-label" style="font-weight: bold;">Data da Devolução</label>
+          <input type="date" class="form-control" placeholder="Data"  style="margin-top: -5px">
+        </div>
+        <div class="col-md-2">
+          <label class="form-label" style="font-weight: bold;">Hora da Devolução</label>
+          <input type="time" class="form-control" placeholder="Hora"  style="margin-top: -5px">
+        </div>
+    </div>
+
+  </form>
+
+  <!--
+  <div style="display: block;">
+    <input type="checkbox" style="margin-left: 12px; margin-top: 10px;">
+    <label class="form-label" style="font-weight: bold; margin-left: 5px;"> Devolução em local diferente?</label>
+  </div>
+-->
+
+</div>

@@ -1,0 +1,56 @@
+
+
+<div class="container">
+  <h1 class="text-center mt-2">Faturamento</h1>
+  <hr>
+
+  <form [formGroup]="formFaturamento">
+
+    <div class="form-group" id="div">
+      <label for="nome"><b>Cliente</b></label>
+      <input type="text" class="form-control" id="nome" formControlName="nome">
+    </div>
+
+    <div class="form-group" id="div">
+      <label for="veiculo"><b>Veiculo</b></label>
+      <input type="text" class="form-control" id="veiculo" formControlName="veiculo">
+    </div>
+
+    <div class="form-group" id="div">
+      <label for="datalocacao"><b>Data Locação</b></label>
+      <input type="date" class="form-control" id="locacao" formControlName="datalocacao">
+    </div>
+
+    <div class="form-group" id="div">
+      <label for="cpf"><b>Data  Retirada</b></label>
+      <input type="date" class="form-control" id="dataretirada" formControlName="dataretirada">
+    </div>
+
+    <div class="form-group" id="div">
+      <label for="datadevolucao"><b>Data Devolução</b></label>
+      <input type="date" class="form-control" id="datadevolucao" formControlName="datadevolucao">
+    </div>
+
+    <div class="form-group" id="div">
+      <label for="formapagamento"><b>Forma de Pagamento</b></label>
+      <select class="form-select">
+        <option selected>Selecione uma Forma de Pagamento</option>
+        <option value="1">Cartão de Crédito</option>
+        <option value="1">Cartão de Débito</option>
+        <option value="2">Dinheiro</option>
+        <option value="2">Pix</option>
+      </select>
+    </div>
+
+    <div class="form-group" id="div">
+      <label for="valor"><b>Valor</b></label>
+      <input type="number"  class="form-control" id="valor" formControlName="valor">
+    </div>
+
+  <p></p>
+  <div class="form-group text-center mt-2">
+  <button class="btn btn-primary" (click)="onSubmit()" [disabled]="formFaturamento.invalid"> Efetuar Pagamento  </button>
+  </div>
+  </form>
+
+  </div>

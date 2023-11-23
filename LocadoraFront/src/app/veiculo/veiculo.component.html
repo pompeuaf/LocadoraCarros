@@ -1,0 +1,49 @@
+
+<div>
+  <router-outlet>  </router-outlet>
+</div>
+
+<div class="container">
+<h2 class="text-center mt-2">Veiculos Cadastrados</h2>
+<hr>
+
+<div class="row col-md-12">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <a style="width: 100%; text-align:center" class="btn btn-primary" routerLink="formulario">Novo</a>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+<hr>
+
+
+<div class="row">
+<div class="col-md-1"></div>
+<div class="col-md-10">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Código</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Modelo/Ano</th>
+      <th scope="col">Combustível</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+    <tbody>
+    <tr *ngFor="let Veiculo of Veiculos">
+      <td>{{Veiculo.id}}</td>
+      <td>{{Veiculo.marca}}</td>
+      <td>{{Veiculo.modelo}}</td>
+      <td>{{Veiculo.combustivel}}</td>
+      <td><a style="width: 100%; text-align:center" class="btn btn-primary" (click)="editar(Veiculo.id)">Editar</a></td>
+      <td><a style="width: 100%; text-align:center" class="btn btn-danger" (click)="excluir(Veiculo.id)">Deletar</a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="col-md-1"></div>
+</div>
+</div>
+
+

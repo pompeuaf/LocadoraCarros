@@ -1,0 +1,48 @@
+<div class="container">
+
+<h1 class="text-center mt-2">Cadastro de Veiculos</h1>
+<hr>
+
+<div class="row col-md-12">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <a style="width: 100%; text-align:center" class="btn btn-primary" href="#" routerLink="/veiculo">Lista</a>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+<hr>
+
+<form [formGroup]="formVeiculos">
+
+  <div class="form-group">
+    <label for="nome"><b>Marca</b></label>
+    <input type="text" class="form-control" id="marca" formControlName="marca">
+  </div>
+
+  <div class="form-group">
+    <label for="email"><b>Modelo</b></label>
+    <input type="email" class="form-control" id="modelo" formControlName="modelo">
+  </div>
+
+  <div class="form-group">
+    <label for="datetime-local"><b>Ano</b></label>
+    <input type="datetime-local" class="form-control" id="ano" formControlName="ano">
+  </div>
+
+  <div class="form-group">
+    <label for="telefone"><b>Valor</b></label>
+    <input type="number" step="0.01" class="form-control" id="valor" formControlName="valor">
+  </div>
+
+  <div class="form-group">
+    <label for="telefone"><b>Combustivel</b></label>
+    <input type="text" class="form-control" id="combustivel" formControlName="combustivel">
+  </div>
+
+<p></p>
+<div class="form-group text-center mt-2">
+<button class="btn btn-primary " (click)="onSubmit()" [disabled]="formVeiculos.invalid"> Cadastrar  </button>
+</div>
+</form>
+
+</div>

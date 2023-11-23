@@ -55,8 +55,15 @@ namespace LocadoraBack.Controllers
         {
             try
             {
+                if(objeto.Id == 0)
+                {
+                    db.PESSOAS.Add(objeto);
+                }
+                else
+                {
+                    db.PESSOAS.Update(objeto);
+                }
                 //db.PESSOAS.Update(objeto);
-                db.PESSOAS.Add(objeto);
                 db.SaveChanges();
                 return "Cadastrado com sucesso";
             }
@@ -64,23 +71,6 @@ namespace LocadoraBack.Controllers
             {
 
                 return "ERRO: "+ex.Message + "  " + ex.InnerException;
-            }
-        }
-
-        [HttpPut]
-        public string put([FromBody] PessoaModel objeto)
-        {
-            try
-            {
-                db.PESSOAS.Update(objeto);
-                //db.PESSOAS.Add(objeto);
-                db.SaveChanges();
-                return "Alterado com sucesso";
-            }
-            catch (Exception ex)
-            {
-
-                return "ERRO: " + ex.Message + "  " + ex.InnerException;
             }
         }
 

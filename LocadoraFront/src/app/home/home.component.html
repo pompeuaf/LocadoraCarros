@@ -24,20 +24,6 @@
       <div class="col-md-10" style="text-align: left; ">
         <label class="form-label" style="font-weight: bold;">Relação de Carros</label>
 
-        <br>
-
-        <label class="form-label" style="font-weight: bold;">Id Pessoa</label>
-        <input type="text" formControlName="id">
-
-        <br>
-
-
-        <label class="form-label" style="font-weight: bold;">Data da Retirada</label>
-        <input type="date" class="form-control" placeholder="Data" style="margin-top: -5px">
-
-        <br>
-
-
           <select class="form-select">
             <option>Selecione um Carro</option>
             <option *ngFor="let Veiculo of Veiculos" value="{{Veiculo.id}}">{{Veiculo.marca}} | {{Veiculo.modelo}} | {{Veiculo.combustivel}} | {{Veiculo.ano}}</option>

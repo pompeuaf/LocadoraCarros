@@ -10,6 +10,7 @@ import { PessoaService } from 'src/app/services/pessoa.service';
 })
 export class FormPessoaComponent implements OnInit {
   formPessoas = new FormGroup({
+    id: new FormControl(''),
     pessoa: new FormControl('', Validators.required),
     email: new FormControl('', Validators.email),
     telefone: new FormControl('', Validators.required),
@@ -33,6 +34,9 @@ export class FormPessoaComponent implements OnInit {
           return console.log(erro);
         }
       })
+    }else{
+      this.id = 0;
+      this.formPessoas.controls['id'].patchValue(this.id);
     }
   }
 
@@ -42,6 +46,7 @@ export class FormPessoaComponent implements OnInit {
     //let date = new Date(this.formPessoas.value.ano).toISOString();
 
     let data = {
+      id: this.formPessoas.value.id,
       pessoa: this.formPessoas.value.pessoa,
       email: this.formPessoas.value.email,
       telefone: this.formPessoas.value.telefone,
@@ -49,8 +54,9 @@ export class FormPessoaComponent implements OnInit {
     }
 
     if(this.id){
-      this.service.put(this.id, data).subscribe({
+      this.service.post(data).subscribe({
         next: ()=>{
+          this.router.navigate(['/pessoa'])
           return;
         },
         error: (erro)=>{
@@ -62,6 +68,7 @@ export class FormPessoaComponent implements OnInit {
     //this.service.post(this.formVeiculos.value).subscribe({
         this.service.post(data).subscribe({
           next: ()=>{
+            this.router.navigate(['/pessoa'])
             return;
           },
           error: (erro)=>{

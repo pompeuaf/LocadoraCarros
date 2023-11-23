@@ -19,7 +19,7 @@ export class PessoaComponent implements OnInit {
     this.router.navigate(['/pessoa/formulario'], {relativeTo: this.route, queryParams: {id: id}});
   }
   excluir(id:number){
-    this.service.delete(id).subscribe();
+    this.service.post({id:id}).subscribe();
     window.location.reload();
   }
 

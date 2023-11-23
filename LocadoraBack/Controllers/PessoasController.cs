@@ -55,6 +55,7 @@ namespace LocadoraBack.Controllers
         {
             try
             {
+
                 if(objeto.Id == 0)
                 {
                     db.PESSOAS.Add(objeto);
